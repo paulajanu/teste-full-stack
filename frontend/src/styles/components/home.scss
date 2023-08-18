@@ -1,0 +1,56 @@
+@import '../variables.scss';
+
+.home {
+    margin-bottom: 120px;
+    .posts {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        .post {
+            display: flex;
+            flex-direction: column;
+            height: 423px;
+            width: 314px;
+            border: 1px solid $blue-tone3;
+            .img {
+                img {
+                    border-top: 1px solid $blue-tone3;
+                    border-left:  1px solid $blue-tone3;
+                    border-right:  1px solid $blue-tone3;
+                    height: 218px;
+                    width: 100%;
+                }
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                h1 {
+                    font-size: 20px;
+                    padding: 0 17px 8px 17px;
+                    color: $text-color;
+                    text-align: justify;
+                }
+                p {
+                    font-size: 12px;
+                    padding: 0 17px 18px 17px;
+                    color: $text-color;
+                    text-align: justify;
+                }
+                .links {
+                    color: $text-color;
+                }
+                .btn-ler-mais {
+                    align-self: flex-end;
+                    font-size: 14px;
+                    padding: 2px 10px;
+                    border: 1px solid $blue-tone3;
+                    border-radius: 5px;
+                    margin-right: 13px;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}

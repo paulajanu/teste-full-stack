@@ -1,0 +1,30 @@
+@import '../variables.scss';
+
+.menu-container {
+    position: fixed;
+    bottom: 0%;
+    height: 75px;
+    width: 100%;
+    background-color: $blue-tone2;
+    font-size: 15px;
+    .list-menu {
+        display: flex;
+        justify-content: space-around;
+        height: 100%;
+    }
+    li {
+        align-self: center;
+    }
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #ffffff;
+        &:hover {
+            color: $blue-tone3;
+        }
+    }
+    .icon-item {
+        font-size: 30px;
+    }
+}
