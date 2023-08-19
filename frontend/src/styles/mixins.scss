@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+}
+
+@mixin align-color {
+    color: $text-color;
+    text-align: justify;
+}
+
+@mixin font-color {
+    font-size: 0.82rem;
+    color: $text-color;
+}

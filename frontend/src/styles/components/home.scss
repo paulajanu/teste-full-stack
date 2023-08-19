@@ -1,53 +1,57 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .home {
-    margin-bottom: 120px;
+    margin-bottom: 7.5rem;
     .posts {
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        @include flex-column;
         align-items: center;
-        gap: 40px;
+        margin-top: 2.5rem;
+        gap: 2rem;
         .post {
-            display: flex;
-            flex-direction: column;
+            // display: flex;
+            // flex-direction: column;
+            // @include flex-column;
             height: 423px;
             width: 314px;
             border: 1px solid $blue-tone3;
             .img {
                 img {
-                    border-top: 1px solid $blue-tone3;
-                    border-left:  1px solid $blue-tone3;
-                    border-right:  1px solid $blue-tone3;
                     height: 218px;
                     width: 100%;
                 }
             }
             .content {
-                display: flex;
-                flex-direction: column;
+                // display: flex;
+                // flex-direction: column;
+                @include flex-column;
                 h1 {
-                    font-size: 20px;
-                    padding: 0 17px 8px 17px;
-                    color: $text-color;
-                    text-align: justify;
+                    font-size: 1.25rem;
+                    padding: 0 1.07rem 0.5rem 1.07rem;
+                    @include align-color;
+                    // color: $text-color;
+                    // text-align: justify;
                 }
                 p {
-                    font-size: 12px;
-                    padding: 0 17px 18px 17px;
-                    color: $text-color;
-                    text-align: justify;
+                    font-size: 0.875rem;
+                    padding: 0 1.07rem 1.125rem 1.07rem;
+                    @include align-color;
+                    // color: $text-color;
+                    // text-align: justify;
                 }
-                .links {
-                    color: $text-color;
-                }
+                // .links {
+                //     color: $text-color;
+                // }
                 .btn-ler-mais {
                     align-self: flex-end;
-                    font-size: 14px;
-                    padding: 2px 10px;
+                    font-size: 0.875rem;
+                    padding: 0.125rem 0.625rem;
                     border: 1px solid $blue-tone3;
                     border-radius: 5px;
-                    margin-right: 13px;
+                    margin-right: 0.82rem;
                     color: $text-color;
                 }
             }
