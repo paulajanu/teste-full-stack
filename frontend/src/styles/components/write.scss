@@ -1,0 +1,55 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.add {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    @include flex-column;
+    align-items: center;
+    margin-bottom: 7.5rem;
+    .add-content {
+        // display: flex;
+        // flex-direction: column;
+        @include flex-column;
+        justify-content: flex-start;
+        margin-top: 2.5rem;
+        width: 331px;
+        input {
+            padding: 0.625rem;
+            border: 1px solid $blue-tone3;
+            border-radius: 5px;
+            width: 100%;
+            margin-bottom: 1.25rem;
+        }
+        .add-image {
+            margin-bottom: 1.25rem;
+            label {
+                color: $blue-tone3;
+                .icon-image {
+                    font-size: 20px;
+                    margin-right: 0.32rem;
+                }
+            }
+        }
+        .editor-container {
+            height: 280px;
+            overflow: scroll;
+            border: 1px solid $blue-tone3;
+            border-radius: 5px;
+            margin-bottom: 1.25rem;
+            .editor {
+                height: 100%;
+                border: none;
+            }
+        }
+        .btn-publish {
+            padding: 0.32rem 0.625rem;
+            border: 1px solid $blue-tone3;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: $text-color;
+            align-self: flex-end;
+        }
+    }
+}

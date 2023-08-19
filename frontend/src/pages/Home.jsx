@@ -42,7 +42,7 @@ const Home = () => {
                         </div>
                         <div className='content'>
                             <h1>{post.title}</h1>
-                            <p>{post.desc.substring(0, 138)}{post.desc.length > 138 ? '...' : ''}</p>
+                            <p>{post.desc.substring(0, 80)}{post.desc.length > 80 ? '...' : ''}</p>
                             <Link className="links btn-ler-mais" to={`/post/${post.id}`}>
                                 Ler mais
                             </Link>

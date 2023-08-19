@@ -1,13 +1,16 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .postage {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    @include flex-column;
     align-items: center;
-    margin-bottom: 120px;
+    margin-bottom: 7.5rem;
     .content {
         width: 331px;
-        margin-top: 40px;
+        margin-top: 2.5rem;
         align-self: center;
         img {
             height: 218px;
@@ -19,19 +22,21 @@
             justify-content: space-between;
             .info {
                 span {
-                    font-size: 13px;
-                    color: $text-color;
+                    // font-size: 0.82rem;
+                    // color: $text-color;
+                    @include font-color;
                     font-weight: 600;
                 }
                 p {
-                    font-size: 13px;
-                    color: $text-color;
+                    // font-size: 0.82rem;
+                    // color: $text-color;
+                    @include font-color;
                 }
             }
             .options {
                 display: flex;
-                gap: 16px;
-                margin-top: 7px;
+                gap: 1rem;
+                margin-top: 0.44rem;
                 .icon-options {
                     font-size: 23px;
                     color: $pink-tone;
@@ -40,22 +45,24 @@
         }
         .post-content {
             h1 {
-                font-size: 20px;
-                color: $text-color;
-                padding: 21px 0 16px 0;
-                text-align: justify;
+                font-size: 1.25rem;
+                // color: $text-color;
+                padding: 1.32rem 0 1rem 0;
+                // text-align: justify;
+                @include align-color;
             }
             p {
-                font-size: 15px;
-                color: $text-color;
-                text-align: justify;
+                font-size: 0.94rem;
+                @include align-color;
+                // color: $text-color;
+                // text-align: justify;
             }
         }
         hr {
             border: none;
             height: 1px;
             background-color: $text-color;
-            margin: 28px 0;
+            margin: 1.75rem 0;
         }
     }
 }
