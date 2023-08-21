@@ -1,13 +1,52 @@
 @import '../variables.scss';
+@import '../mixins.scss';
 
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 87px;
     border-bottom: 1px solid $blue-tone2;
+    background-color: #ffffff;
     img {
         width: 68px;
         height: 65.49px;
         margin-left: 1rem;
+
+        @include tablet-medium {
+            margin-left: 3rem;
+        }
+    }
+    .menu-container {
+        .list-menu {
+            display: flex;
+            justify-content: space-around;
+            height: 100%;
+
+            @include tablet-medium {
+                margin-right: 2rem;
+            }
+            li {
+                margin-right: 1.2rem;
+
+                @include tablet-medium {
+                    margin-right: 2rem;
+                }
+            }
+            .menu-items {
+                @include flex-column;
+                align-items: center;
+                color: #a0a0a0;
+                &.active { 
+                    color: $blue-tone3;
+                }
+                .icon-item {
+                    font-size: 30px;
+                }
+                .icon-item-publish {
+                    font-size: 30px;
+                }
+            }
+        }
     }
 }

@@ -2,49 +2,57 @@
 @import '../mixins.scss';
 
 .home {
-    margin-bottom: 7.5rem;
+    padding-bottom: 7.5rem;
     .posts {
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
         @include flex-column;
         align-items: center;
-        margin-top: 2.5rem;
+        padding-top: 2.5rem;
         gap: 2rem;
+
+        @include tablet-medium {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2.5rem;
+            gap: 1.5rem;
+        }
+
+        @include tablet-large {
+            padding-top: 3rem;
+            gap: 3rem;
+        }
         .post {
-            // display: flex;
-            // flex-direction: column;
-            // @include flex-column;
             height: 423px;
             width: 314px;
             border: 1px solid $blue-tone3;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 25px -10px rgba(0, 0, 0, 0.38);
+
+            @include tablet-medium {
+                width: 300px;
+            }
             .img {
                 img {
                     height: 218px;
                     width: 100%;
+                    border-radius: 10px 10px 0 0;
                 }
             }
             .content {
-                // display: flex;
-                // flex-direction: column;
                 @include flex-column;
                 h1 {
                     font-size: 1.25rem;
                     padding: 0 1.07rem 0.5rem 1.07rem;
                     @include align-color;
-                    // color: $text-color;
-                    // text-align: justify;
                 }
                 p {
                     font-size: 0.875rem;
                     padding: 0 1.07rem 1.125rem 1.07rem;
                     @include align-color;
-                    // color: $text-color;
-                    // text-align: justify;
                 }
-                // .links {
-                //     color: $text-color;
-                // }
                 .btn-ler-mais {
                     align-self: flex-end;
                     font-size: 0.875rem;

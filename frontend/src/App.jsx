@@ -4,7 +4,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Initial from "./pages/initial";
-import Nav from "./Components/Nav";
 import Home from "./pages/home";
 import Write from "./pages/Write";
 import Postage from "./pages/Postage";
@@ -15,7 +14,6 @@ const Layout = () => {
     <>
       <Header/>
       <Outlet/>
-      <Nav/>
     </>
   )
 }
