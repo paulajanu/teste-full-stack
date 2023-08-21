@@ -3,7 +3,6 @@
 @mixin flex-column {
     display: flex;
     flex-direction: column;
-    // align-items: center;
 }
 
 @mixin align-color {
@@ -14,4 +13,22 @@
 @mixin font-color {
     font-size: 0.82rem;
     color: $text-color;
+}
+
+@mixin tablet-medium {
+    @media (min-width: 650px) {
+      @content;
+    }
+}
+
+@mixin tablet-large {
+    @media (min-width: 800px) {
+      @content;
+    }
+}
+
+@mixin desktop-medium {
+    @media (min-width: 1024px) {
+        @content;
+    }
 }
