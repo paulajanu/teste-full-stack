@@ -1,27 +1,83 @@
 import React, { useState } from 'react';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import { FaFileImage } from "react-icons/fa";
-import '../styles/components/write.scss';
+import { useNavigate } from 'react-router-dom';
+import '../styles/components/write.scss'
 
 const Write = () => {
-    const [value, setValue] = useState('');
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+    const [image, setImage] = useState('');
+    const navigate = useNavigate();
+    const owner = JSON.parse(localStorage.getItem('login'));
 
-    console.log(value)
+    const url = 'http://localhost:3000/posts';
+
+    const createPost = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    owner,
+                    title,
+                    body,
+                    image,
+                    created_at: new Date(),
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`Erro na requisição: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('Novo post criado:', data);
+            navigate('/');
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+        }
+    }
 
     return (
         <div className='add'>
-            <div className='add-content'>
-                <input type="text" placeholder='Título'/>
-                <div className='add-image'>
-                    <input style={{display: "none"}} type="file" id="file" name=""/>
-                    <label htmlFor="file"><FaFileImage className='icon-image'/>Adicionar imagem</label>
+            <form onSubmit={(event) => createPost(event)}>
+                <div className='add-content'>
+                    <label htmlFor="title">
+                        <input 
+                            type="text" 
+                            name="title" 
+                            id="title" 
+                            placeholder="Título" 
+                            onChange={(event) => setTitle(event.target.value)}
+                            required
+                        />
+                    </label>
+                    <label htmlFor="url">
+                        <input 
+                            type="text" 
+                            name="url" 
+                            id="url" 
+                            placeholder="URL da imagem" 
+                            onChange={(event) => setImage(event.target.value)}
+                            required
+                        />
+                    </label>
+                    <div className='editor-container'>
+                        <label htmlFor="body">
+                            <textarea
+                                name="body"
+                                id="body"
+                                placeholder="Digite o conteúdo"
+                                onChange={(event) => setBody(event.target.value)}
+                                required
+                            />
+                        </label>
+                    </div>
+                    <button type="submit" value="Criar Post" className='btn-publish'>Publicar</button>
                 </div>
-                <div className='editor-container'>
-                    <ReactQuill className='editor' theme="snow" value={value} onChange={setValue} />
-                </div>
-                <button className='btn-publish'>Publicar</button>
-            </div>
+            </form>
         </div>
     )
 }

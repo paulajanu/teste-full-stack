@@ -27,16 +27,14 @@
                 }
             }
         }
-        .editor-container {
+        textarea {
             height: 330px;
+            width: 100%;
             overflow: scroll;
             border: 1px solid $blue-tone3;
             border-radius: 5px;
+            padding: 0.625rem;
             margin-bottom: 1.25rem;
-            .editor {
-                height: 100%;
-                border: none;
-            }
         }
         .btn-publish {
             padding: 0.32rem 0.625rem;

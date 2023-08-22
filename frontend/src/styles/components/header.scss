@@ -8,6 +8,10 @@
     height: 87px;
     border-bottom: 1px solid $blue-tone2;
     background-color: #ffffff;
+
+    @include desktop-medium {
+        height: 100px;
+    }
     img {
         width: 68px;
         height: 65.49px;
@@ -15,6 +19,15 @@
 
         @include tablet-medium {
             margin-left: 3rem;
+        }
+
+        @include desktop-medium {
+            width: 75px;
+            height: 73.49px;
+        }
+
+        @include desktop-large {
+            margin-left: 6rem;
         }
     }
     .menu-container {
@@ -25,6 +38,10 @@
 
             @include tablet-medium {
                 margin-right: 2rem;
+            }
+
+            @include desktop-large {
+                margin-right: 4rem;
             }
             li {
                 margin-right: 1.2rem;
@@ -41,9 +58,6 @@
                     color: $blue-tone3;
                 }
                 .icon-item {
-                    font-size: 30px;
-                }
-                .icon-item-publish {
                     font-size: 30px;
                 }
             }

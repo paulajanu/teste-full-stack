@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import { FaHome, FaPenSquare } from "react-icons/fa";
-import Logo from '../img/logo-voe-descobertas.png';
+import { FaHome, FaPenSquare, FaSignOutAlt } from "react-icons/fa";
+import Logo from '../img/logo-voe-descobertas-azul.png';
 import '../styles/components/header.scss';
 
 const Header = () => {
@@ -28,6 +28,15 @@ const Header = () => {
                         >
                             <FaPenSquare className="icon-item"/>
                             <span>Publicar</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                        to="/initial"
+                        className="links menu-items"
+                        >
+                            <FaSignOutAlt className="icon-item"/>
+                            <span>Sair</span>
                         </NavLink>
                     </li>
                 </ul>

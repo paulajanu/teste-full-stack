@@ -3,8 +3,8 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
-import Initial from "./pages/initial";
-import Home from "./pages/home";
+import Initial from "./pages/Initial";
+import Home from "./pages/Home";
 import Write from "./pages/Write";
 import Postage from "./pages/Postage";
 import Header from "./Components/header";
