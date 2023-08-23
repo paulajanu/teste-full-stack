@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 import '../styles/components/home.scss';
+import Footer from '../Components/Footer';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -33,13 +35,16 @@ const Home = () => {
     }, []);
 
     const getDescription = (desc, maxLength) => {
-        return desc.length > maxLength ? desc.substring(0, maxLength) + '...' : desc;
+        const sanitizedDesc = DOMPurify.sanitize(desc, { ALLOWED_TAGS: [] });
+        return sanitizedDesc.length > maxLength ? sanitizedDesc.substring(0, maxLength) + '...' : sanitizedDesc;
     };
-
+    
     return (
         <div className="home">
             <div className="posts">
-                {posts.map((post) =>(
+                {posts
+                    .sort((a, b) => b.id - a.id)
+                    .map((post) =>(
                     <div className="post" key={post.id}>
                         <div className="img">
                             <img src={post.image} alt="Imagem da postagem"/>
@@ -59,6 +64,7 @@ const Home = () => {
                     </div>
                 ))}
             </div>
+            <Footer/>
         </div>
     )
 }

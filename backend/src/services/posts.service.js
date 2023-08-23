@@ -27,10 +27,7 @@ const updatePost = async (id, title, body, image) => {
 
 const deletePost = async (id) => {
   await postModel.deletePost(id);
-  const deletedItem = await postModel.getPostById(id);
-
-  if (!deletedItem) return { type: 204, message: 'Excluído com sucesso' };
-  return null;
+  return { type: 204, message: 'Excluído com sucesso' };
 };
 
 const postService = {

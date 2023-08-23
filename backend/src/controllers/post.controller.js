@@ -10,9 +10,11 @@ const getPostById = async (req, res) => {
 
   const post = await postService.getPostById(id);
 
-  if (!post.length) res.status(400).json('Post não foi encontrado');
-
-  return res.status(200).json(post);
+  if (!post) {
+    res.status(400).json('Post não foi encontrado');
+  } else {
+    res.status(200).json(post);
+  }
 };
 
 const insertPost = async (req, res) => {
@@ -39,8 +41,6 @@ const deletePost = async (req, res) => {
   const post = await postService.deletePost(id);
 
   if (post) return res.status(post.type).json(post.message);
-
-  return null;
 };
 
 const postController = {
