@@ -4,15 +4,36 @@
 .postage {
     @include flex-column;
     align-items: center;
-    margin-bottom: 7.5rem;
+    margin-bottom: 5.5rem;
     .content {
         width: 331px;
         margin-top: 2.5rem;
         align-self: center;
+        @include tablet-medium {
+            width: 550px;
+        }
+        @include desktop-medium {
+            width: 650px;
+        }
+        @include desktop-large {
+            width: 750px;
+        }
         img {
             height: 218px;
             width: 100%;
             border-radius: 5px;
+
+            @include tablet-medium {
+                height: 345px;
+            }
+
+            @include desktop-medium {
+                height: 425px;
+            }
+
+            @include desktop-large {
+                height: 495px;
+            }
         }
         .top {
             display: flex;
@@ -21,9 +42,25 @@
                 span {
                     @include font-color;
                     font-weight: 600;
+
+                    @include tablet-medium {
+                        font-size: 1rem
+                    }
+
+                    @include desktop-medium {
+                        font-size: 1.2rem;
+                    }
                 }
                 p {
                     @include font-color;
+
+                    @include tablet-medium {
+                        font-size: 1rem
+                    }
+
+                    @include desktop-medium {
+                        font-size: 1.2rem;
+                    }
                 }
             }
             .options {
@@ -33,6 +70,10 @@
                 .icon-options {
                     font-size: 23px;
                     color: $pink-tone;
+
+                    @include desktop-medium {
+                        font-size: 25px;
+                    }
                 }
             }
         }
@@ -41,17 +82,31 @@
                 font-size: 1.25rem;
                 padding: 1.32rem 0 1rem 0;
                 @include align-color;
+
+                @include tablet-medium {
+                    font-size: 1.5rem
+                }
+
+                @include desktop-medium {
+                    font-size: 1.8rem;
+                }
             }
             p {
                 font-size: 0.94rem;
                 @include align-color;
+
+                @include tablet-medium {
+                    font-size: 1rem
+                }
+
+                @include desktop-medium {
+                    font-size: 1.1rem;
+                }
+
+                @include desktop-large {
+                    font-size: 1.2rem;
+                }
             }
-        }
-        hr {
-            border: none;
-            height: 1px;
-            background-color: $text-color;
-            margin: 1.75rem 0;
         }
     }
 }

@@ -2,7 +2,6 @@
 @import '../mixins.scss';
 
 .home {
-    padding-bottom: 7.5rem;
     .posts {
         @include flex-column;
         align-items: center;

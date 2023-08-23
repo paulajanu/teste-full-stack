@@ -10,6 +10,13 @@
         justify-content: flex-start;
         margin-top: 2.5rem;
         width: 331px;
+        @include tablet-medium {
+            width: 550px;
+            margin-top: 4rem;
+        }
+        @include desktop-medium {
+            width: 700px;
+        }
         input {
             padding: 0.625rem;
             border: 1px solid $blue-tone3;
@@ -27,14 +34,19 @@
                 }
             }
         }
-        textarea {
+        .editor-container {
             height: 330px;
-            width: 100%;
             overflow: scroll;
             border: 1px solid $blue-tone3;
             border-radius: 5px;
-            padding: 0.625rem;
             margin-bottom: 1.25rem;
+            @include tablet-medium {
+                height: 460px;
+            }
+            .editor {
+                height: 100%;
+                border: none;
+            }
         }
         .btn-publish {
             padding: 0.32rem 0.625rem;

@@ -1,0 +1,28 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4.4rem;
+    height: 60px;
+    background-color: $blue-tone2;
+    span {
+        margin: 0.63rem;
+        color: #ffffff;
+    }
+    .list-menu-footer {
+        display: flex;
+        margin-right: 0.63rem;
+        li {
+            margin: 0.63rem 0.31rem;
+            .icon-footer {
+                font-size: 1.56rem;
+                color: #ffffff;
+                &:hover {
+                    color: $blue-tone3;
+                }
+            }
+        }
+    }
+}
